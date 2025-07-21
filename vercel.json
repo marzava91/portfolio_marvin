@@ -1,4 +1,25 @@
 {
-  "outputDirectory": "build/web",
-  "framework": null
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
+  ],
+  "trailingSlash": false,
+  "builds": [
+    {
+      "src": "vercel_build.sh",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build/web" }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }
