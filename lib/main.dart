@@ -25,6 +25,7 @@ class nimbus extends StatelessWidget {
         themeMode: ThemeMode.system,             // ⚙️ Usa el tema según el sistema
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
+        routeInformationProvider: _appRouter.routeInfoProvider(),
       ),
     );
   }
