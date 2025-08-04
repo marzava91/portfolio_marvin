@@ -73,7 +73,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     double contentAreaWidth = screenWidth;
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final defaultTextColor = isDark ? Colors.white : Colors.black;  
+    final defaultTextColor = isDark ? Colors.white : Colors.black; 
+    final firstNameColor = isDark ? Colors.grey[300] : AppColors.grey50; 
 
     TextStyle? bodyTextStyle =
         textTheme.bodyLarge?.copyWith(fontSize: bodyTextSize);
@@ -157,11 +158,11 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.05),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.05, left: 8.0),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
                       style: textTheme.displayLarge?.copyWith(
-                        color: AppColors.grey50,
+                        color: firstNameColor,
                         fontSize: headerIntroTextSize * 2,
                       ),
                     ),

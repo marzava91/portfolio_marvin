@@ -56,6 +56,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final defaultTextColor = isDark ? Colors.white : Colors.black;
+    final firstNameColor = isDark ? Colors.grey[300] : AppColors.grey50;
+
     TextStyle? bodyTextStyle =
         textTheme.bodyLarge?.copyWith(fontSize: bodyTextSizeSm);
     
@@ -124,11 +126,11 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: heightOfStack * 0.1),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.1, left: 8.0),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
                       style: textTheme.displayLarge?.copyWith(
-                        color: AppColors.grey50,
+                        color: firstNameColor,
                         fontSize: headerIntroTextSize * 2.5,
                       ),
                     ),
