@@ -144,9 +144,17 @@ class _AwardsSectionState extends State<AwardsSection>
   }
 
   Widget _buildNimbusInfoSectionSm() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
     return NimbusInfoSection2(
       sectionTitle: StringConst.MY_AWARDS,
       title1: StringConst.AWARDS_TITLE,
+      title1Style: titleStyle,
       hasTitle2: false,
       body: StringConst.AWARDS_DESC,
       child: Column(
@@ -161,9 +169,17 @@ class _AwardsSectionState extends State<AwardsSection>
   }
 
   Widget _buildNimbusInfoSectionLg() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
     return NimbusInfoSection1(
       sectionTitle: StringConst.MY_AWARDS,
       title1: StringConst.AWARDS_TITLE,
+      title1Style: titleStyle,
       hasTitle2: false,
       body: StringConst.AWARDS_DESC,
       child: Container(
@@ -254,13 +270,18 @@ class _AwardsSectionState extends State<AwardsSection>
   }
 
   Widget _buildAwards1() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.grey : Colors.black;
+
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           StringConst.AWARDS_TYPE_TITLE_1,
-          style: textTheme.headlineSmall,
+          style: textTheme.headlineSmall?.copyWith(
+            color: textColor,
+          ),
         ),
         SpaceH16(),
         ..._buildAwards(Data.awards1),
@@ -269,13 +290,18 @@ class _AwardsSectionState extends State<AwardsSection>
   }
 
   Widget _buildAwards2() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
     TextTheme textTheme = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           StringConst.AWARDS_TYPE_TITLE_2,
-          style: textTheme.headlineMedium,
+          style: textTheme.headlineSmall?.copyWith(
+            color: textColor,
+          ),
         ),
         SpaceH16(),
         ..._buildAwards(Data.awards1),

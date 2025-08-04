@@ -71,8 +71,11 @@ class _SkillLevelState extends State<SkillLevel> {
   }
 
   Widget _buildChild(double level) {
-    TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? defaultStyle = textTheme.titleMedium;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+    final TextStyle effectiveTextStyle =
+        Theme.of(context).textTheme.titleMedium!.copyWith(color: textColor);
+
     return Container(
       width: widget.skillLevelWidth,
       child: Column(
@@ -83,11 +86,11 @@ class _SkillLevelState extends State<SkillLevel> {
             children: [
               Text(
                 widget.skill,
-                style: widget.skillStyle ?? defaultStyle,
+                style: widget.skillStyle ?? effectiveTextStyle,
               ),
               Text(
                 "${level.toInt()} %",
-                style: widget.levelStyle ?? defaultStyle,
+                style: widget.levelStyle ?? effectiveTextStyle,
               ),
             ],
           ),
@@ -113,4 +116,5 @@ class _SkillLevelState extends State<SkillLevel> {
       ),
     );
   }
+
 }

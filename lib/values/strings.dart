@@ -74,7 +74,7 @@ class StringConst {
 
   //Skills Section
   static const String MY_SKILLS = "mis habilidades";
-  static const String SKILLS_TITLE_1 = "Las herramients que uso";
+  static const String SKILLS_TITLE_1 = "Las herramientas que uso";
   static const String SKILLS_TITLE_2 = "para construir soluciones";
   static const String SKILLS_DESC =
       "Desarrollo aplicaciones y sistemas conectando frontend, backend y análisis de datos. Utilizo Flutter, Firebase y Python para crear experiencias robustas y con impacto.";

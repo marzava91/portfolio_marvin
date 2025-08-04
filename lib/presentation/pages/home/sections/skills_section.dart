@@ -231,6 +231,13 @@ class _SkillsSectionState extends State<SkillsSection>
   }
 
   Widget _buildNimbusLg({required double width}) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
     return Container(
       child: Row(
         children: [
@@ -243,6 +250,8 @@ class _SkillsSectionState extends State<SkillsSection>
                   title1: StringConst.SKILLS_TITLE_1,
                   title2: StringConst.SKILLS_TITLE_2,
                   body: StringConst.SKILLS_DESC,
+                  title1Style: titleStyle,
+                  title2Style: titleStyle,
                   child: Wrap(
                     runSpacing: kRunSpacing,
                     children: _buildSkillSection(
@@ -260,11 +269,20 @@ class _SkillsSectionState extends State<SkillsSection>
   }
 
   Widget _buildNimbusSm({required double width}) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
     return NimbusInfoSection2(
       sectionTitle: StringConst.MY_SKILLS,
       title1: StringConst.SKILLS_TITLE_1,
       title2: StringConst.SKILLS_TITLE_2,
       body: StringConst.SKILLS_DESC,
+      title1Style: titleStyle,
+      title2Style: titleStyle,
       child: Wrap(
         runSpacing: kRunSpacing,
         children: _buildSkillSection(

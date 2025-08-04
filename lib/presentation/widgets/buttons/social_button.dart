@@ -23,12 +23,12 @@ class SocialButton extends StatelessWidget {
     required this.tag,
     required this.iconData,
      this.onPressed,
-    this.width = Sizes.WIDTH_28,
-    this.height = Sizes.HEIGHT_28,
+    this.width = Sizes.WIDTH_40,
+    this.height = Sizes.HEIGHT_40,
     this.elevation = Sizes.ELEVATION_1,
     this.buttonColor = AppColors.white,
     this.iconColor = AppColors.black,
-    this.iconSize = Sizes.ICON_SIZE_14,
+    this.iconSize = Sizes.ICON_SIZE_26,
     this.decoration,
   });
 

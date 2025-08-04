@@ -21,6 +21,18 @@ class NimBusCardData {
     required this.title,
     required this.subtitle,
   });
+
+  Widget buildTitleWidget(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black;
+
+    return Text(
+      title,
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            color: textColor,
+          ),
+    );
+  }
 }
 
 class NimBusCard extends StatefulWidget {

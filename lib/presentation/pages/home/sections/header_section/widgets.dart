@@ -38,22 +38,14 @@ class _HeaderImageState extends State<HeaderImage> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
-          left: 0,
-          child: RotationTransition(
-            turns: widget.controller,
-            child: Image.asset(
-              ImagePath.DOTS_GLOBE_GREY,
-              height: widget.globeSize,
-              width: widget.globeSize,
-            ),
+        Transform.translate(
+          offset: const Offset(-50, -50), // -Y para subir
+          child: Image.asset(
+            ImagePath.DEV_HEADER,
+            width: widget.imageWidth,
+            height: widget.imageHeight,
+            fit: widget.fit,
           ),
-        ),
-        Image.asset(
-          ImagePath.DEV_HEADER,
-          width: widget.imageWidth,
-          height: widget.imageHeight,
-          fit: widget.fit,
         ),
       ],
     );
@@ -72,7 +64,7 @@ List<Widget> buildSocialIcons(BuildContext context, List<SocialButtonData> socia
         child: Icon(
           socialItems[index].iconData,
           color: iconColor,
-          size: Sizes.ICON_SIZE_18,
+          size: Sizes.ICON_SIZE_30,
         ),
       ),
     );
@@ -126,18 +118,7 @@ List<Widget> buildCardRow({
           backgroundColor: data[index].circleBgColor,
           iconColor: data[index].leadingIconColor,
         ),
-        title: Flexible(
-          child: SelectableText(
-            data[index].title,
-            style: textTheme.titleLarge?.copyWith(
-              fontSize: responsiveSize(
-                context,
-                Sizes.TEXT_SIZE_16,
-                Sizes.TEXT_SIZE_18,
-              ),
-            ),
-          ),
-        ),
+        title: Flexible(child: data[index].buildTitleWidget(context)),
         subtitle: Flexible(
           child: SelectableText(
             data[index].subtitle,

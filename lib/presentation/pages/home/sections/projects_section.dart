@@ -184,9 +184,17 @@ class _ProjectsSectionState extends State<ProjectsSection>
   }
 
   Widget _buildNimbusInfoSectionSm() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
     return NimbusInfoSection2(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
+      title1Style: titleStyle,
       hasTitle2: false,
       body: StringConst.PROJECTS_DESC,
 //      child: ,
@@ -194,9 +202,17 @@ class _ProjectsSectionState extends State<ProjectsSection>
   }
 
   Widget _buildNimbusInfoSectionLg() {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
     return NimbusInfoSection1(
       sectionTitle: StringConst.MY_WORKS,
       title1: StringConst.MEET_MY_PROJECTS,
+      title1Style: titleStyle,
       hasTitle2: false,
       body: StringConst.PROJECTS_DESC,
       child: Wrap(
@@ -399,12 +415,12 @@ class _ProjectCategoryState extends State<ProjectCategory>
   }
 
   Color colorOfCategory() {
-    if (_isHovering) {
-      return widget.hoverColor;
-    } else if (widget.isSelected) {
-      return widget.hoverColor;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    if (widget.isSelected) {
+      return widget.hoverColor; // azul (seleccionado)
     } else {
-      return widget.titleColor;
+      return isDark ? Colors.white : Colors.black; // blanco en oscuro, negro en claro
     }
   }
 }

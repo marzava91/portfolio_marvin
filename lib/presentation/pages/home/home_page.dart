@@ -123,7 +123,10 @@ class _HomePageState extends State<HomePage>
                 children: [
                   Stack(
                     children: [
-                      Positioned.fill(
+                      Positioned(
+                        top: 780, // Mueve verticalmente hacia arriba. Ajusta este valor según lo que necesites
+                        left: 0,
+                        right: 0,
                         child: Align(
                           alignment: Alignment.center,
                           child: Image.asset(ImagePath.BLOB_BEAN_ASH),
@@ -134,7 +137,7 @@ class _HomePageState extends State<HomePage>
                           HeaderSection(
                             key: navItems[0].key,
                           ),
-                          SizedBox(height: spacerHeight),
+                          //SizedBox(height: spacerHeight*.3),
                           VisibilityDetector(
                             key: Key("about"),
                             onVisibilityChanged: (visibilityInfo) {
@@ -157,7 +160,7 @@ class _HomePageState extends State<HomePage>
                   Stack(
                     children: [
                       Positioned(
-                        top: assignWidth(context, 0.1),
+                        top: assignWidth(context, 0.2),
                         left: -assignWidth(context, 0.05),
                         child: Image.asset(ImagePath.BLOB_FEMUR_ASH),
                       ),

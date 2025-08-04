@@ -294,17 +294,29 @@ class _AboutMeSectionState extends State<AboutMeSection>
   Widget nimbusInfoSectionLg() {
     TextTheme textTheme = Theme.of(context).textTheme;
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
+    
+
     return Row(
       children: [
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              
               NimbusInfoSection1(
                 sectionTitle: StringConst.ABOUT_ME,
                 title1: StringConst.CREATIVE_DESIGN,
                 title2: StringConst.HELP,
                 body: StringConst.ABOUT_ME_DESC,
+                title1Style: titleStyle,
+                title2Style: titleStyle,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -334,11 +346,22 @@ class _AboutMeSectionState extends State<AboutMeSection>
 
   Widget nimbusInfoSectionSm({required double width}) {
     TextTheme textTheme = Theme.of(context).textTheme;
+
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color textColor = isDark ? Colors.white : Colors.black;
+
+    final TextStyle titleStyle = textTheme.displaySmall!.copyWith(
+      color: textColor,
+      fontSize: responsiveSize(context, 26, 36, md: 32),
+    );
+
     return NimbusInfoSection2(
       sectionTitle: StringConst.ABOUT_ME,
       title1: StringConst.CREATIVE_DESIGN,
       title2: StringConst.HELP,
       body: StringConst.ABOUT_ME_DESC,
+      title1Style: titleStyle,
+      title2Style: titleStyle,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
