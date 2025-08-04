@@ -25,14 +25,6 @@ class Data {
   ];
   static List<SocialButton2Data> socialData2 = [
     SocialButton2Data(
-      title: StringConst.BEHANCE,
-      iconData: FontAwesomeIcons.behance,
-      url: StringConst.BEHANCE_URL,
-      titleColor: AppColors.blue300,
-      buttonColor: AppColors.blue300,
-      iconColor: AppColors.white,
-    ),
-    SocialButton2Data(
       title: StringConst.DRIBBLE,
       iconData: FontAwesomeIcons.dribbble,
       url: StringConst.DRIBBLE_URL,

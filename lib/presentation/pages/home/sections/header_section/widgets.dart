@@ -60,23 +60,18 @@ class _HeaderImageState extends State<HeaderImage> {
   }
 }
 
-List<Widget> buildSocialIcons(List<SocialButtonData> socialItems) {
+List<Widget> buildSocialIcons(BuildContext context, List<SocialButtonData> socialItems) {
+  final isDark = Theme.of(context).brightness == Brightness.dark;
+  final iconColor = isDark ? Colors.white : Colors.black;
+
   List<Widget> items = [];
   for (int index = 0; index < socialItems.length; index++) {
     items.add(
-      // InkWell(
-      //   onTap: () => openUrlLink(socialItems[index].url),
-      //   child: Icon(
-      //     socialItems[index].iconData,
-      //     color: AppColors.black,
-      //     size: Sizes.ICON_SIZE_18,
-      //   ),
-      // ),
       NimBusLink(
         url: socialItems[index].url,
         child: Icon(
           socialItems[index].iconData,
-          color: AppColors.black,
+          color: iconColor,
           size: Sizes.ICON_SIZE_18,
         ),
       ),

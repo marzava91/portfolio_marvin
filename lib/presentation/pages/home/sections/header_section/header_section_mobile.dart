@@ -53,10 +53,17 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     double headerIntroTextSize = Sizes.TEXT_SIZE_24;
     double screenWidth = widthOfScreen(context) - (sidePadding * 2);
     double contentAreaWidth = screenWidth;
+
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final defaultTextColor = isDark ? Colors.white : Colors.black;
     TextStyle? bodyTextStyle =
         textTheme.bodyLarge?.copyWith(fontSize: bodyTextSizeSm);
-    TextStyle? socialTitleStyle =
-        textTheme.titleLarge?.copyWith(fontSize: socialTextSizeSm);
+    
+    TextStyle? socialTitleStyle = textTheme.titleLarge?.copyWith(
+      fontSize: socialTextSizeSm,
+      color: defaultTextColor,
+    );
+
 
     double buttonWidth = 80;
     double buttonHeight = 48;
@@ -147,6 +154,9 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                     speed: Duration(milliseconds: 60),
                                     textStyle: textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
+                                      color: Theme.of(context).brightness == Brightness.dark
+                                        ? Colors.white
+                                        : Colors.black,
                                     ),
                                   ),
                                 ],
@@ -230,12 +240,12 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.BEHANCE}:",
+                                      "${StringConst.WHATSAPP}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.BEHANCE_ID}",
+                                      "${StringConst.WHATSAPP_NUMBER}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -270,7 +280,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                             ),
                             SpaceH30(),
                             Wrap(
-                              children: buildSocialIcons(Data.socialData),
+                              children: buildSocialIcons(context, Data.socialData),
                             )
                           ],
                         ),
