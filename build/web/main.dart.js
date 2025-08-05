@@ -86818,37 +86818,37 @@ s=r.d
 s.bp()
 s.cp$.H(0,new A.ate(r))},
 l(){this.a_y()},
-I(a1){var s,r,q,p,o,n,m,l,k,j,i,h,g=null,f=A.Q(a1).ok,e=A.b6(a1,g,t.l).w.a.a-32,d=A.Q(a1).ax.a===B.C,c=d?B.e:B.k,b=d?B.kj:B.nQ,a=f.y,a0=a==null?g:a.rM(14)
-a=f.r
-s=a==null?g:a.e2(c,14)
-r=e*0.4
-q=e*0.3
-A.aL7(r*0.4,q,r)
-a=this.d
-a===$&&A.b()
-p=t.p
-a=A.bv(g,A.cK(B.a7,A.a([A.dw(g,A.aGF(a,q,400),g,g,g,-r,320,g)],p),B.F,B.a6),B.o,g,g,g,g,g,g,g,g,g,g,g)
-o=f.a
-o=A.bv(g,A.ez("Loomix",o==null?g:o.e2(b,60),g),B.o,g,g,g,g,g,g,new A.aI(0,60,0,0),g,g,g,g)
-n=a1.ak(t.IB)
-if(n==null)n=g
-else{n=n.r.a
-n===$&&A.b()}m=A.a2("intro")
-l=A.d3(0,60)
-k=f.b
-j=k==null
-if(j)i=g
-else i=k.e2(A.Q(a1).ax.a===B.C?B.e:B.k,24)
-h=t.u6
-n=A.xh(A.a([A.Dm(m,l,i)],h),!0,new A.bO(n,t.zS),g,new A.ata(),5)
-i=A.a2("position")
-l=A.d3(0,80)
-m=A.xh(A.a([A.Dm(i,l,j?g:k.x6(B.G,24,1.2))],h),!0,g,g,new A.atb(),5)
-l=A.a2("position_2")
-i=A.d3(0,80)
-l=A.xh(A.a([A.Dm(l,i,j?g:k.x6(B.G,24,1.2))],h),!0,g,g,new A.atc(),5)
-k=A.a2("about_dev")
-return A.eg(g,B.O,A.cK(B.a7,A.a([a,A.bi(A.a([A.cK(B.a7,A.a([o,A.bv(g,A.dj(A.a([A.bi(A.a([new A.cH(new A.a9(0,e,0,1/0),n,g),new A.cH(new A.a9(0,e,0,1/0),m,g),new A.cH(new A.a9(0,e,0,1/0),l,g),new A.k6(g),new A.cH(new A.a9(0,e*0.5,0,1/0),A.ez(k,a0==null?g:a0.Ro(1.5),g),g),new A.k7(g),A.fc(B.aX,A.a([A.bi(A.a([A.ez(A.a2("location")+":",s,g),new A.h1(g),A.ez("Trujillo, Per\xfa",a0,g)],p),B.T,B.q,B.u),new A.v3(g),A.bi(A.a([A.ez(A.a2("whatsapp")+":",s,g),new A.h1(g),A.ez("+51977683001",a0,g)],p),B.T,B.q,B.u)],p),0,0),A.fc(B.aX,A.a([A.bi(A.a([A.ez(A.a2("email")+":",s,g),new A.h1(g),A.ez("zavaleta.marvin@gmail.com",a0,g)],p),B.T,B.q,B.u)],p),0,0),new A.eS(g),A.dj(A.a([A.ub(B.cD,A.a2("download_cv"),48,new A.atd(a1),!1,"",80),new A.k8(g),A.ub(B.cD,A.a2("hire_me_now"),48,g,!0,u.U,80)],p),B.y,B.q,B.u),new A.k7(g),A.fc(B.aX,A.aL5(a1,$.aAK()),0,0)],p),B.T,B.q,B.aU)],p),B.y,B.q,B.aU),B.o,g,g,g,g,g,g,new A.aI(0,140,0,0),B.eW,g,g,g)],p),B.F,B.a6),new A.eS(g),new A.cJ(new A.aI(16,0,16,0),A.bi(A.azO(a1,$.a4B(),!1,!1,!1,e),B.y,B.q,B.u),g)],p),B.T,B.q,B.u)],p),B.F,B.a6),g,g,g)}}
+I(a2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e=A.Q(a2).ok,d=A.b6(a2,f,t.l).w.a.a-32,c=A.Q(a2).ax.a===B.C,b=c?B.e:B.k,a=c?B.kj:B.nQ,a0=e.y,a1=a0==null?f:a0.rM(14)
+a0=e.r
+s=a0==null?f:a0.e2(b,14)
+r=d*0.4
+q=d*0.3
+p=A.aL7(r*0.4,q,r)*2
+a0=this.d
+a0===$&&A.b()
+o=t.p
+a0=A.bv(f,A.cK(B.a7,A.a([A.dw(f,A.aGF(a0,q,p),f,f,f,-r,100,f)],o),B.F,B.a6),B.o,f,f,f,f,p,f,f,f,f,f,f)
+n=e.a
+n=A.bv(f,A.ez("Loomix",n==null?f:n.e2(a,60),f),B.o,f,f,f,f,f,f,new A.aI(8,p*0.1,0,0),f,f,f,f)
+m=a2.ak(t.IB)
+if(m==null)m=f
+else{m=m.r.a
+m===$&&A.b()}l=A.a2("intro")
+k=A.d3(0,60)
+j=e.b
+i=j==null
+if(i)h=f
+else h=j.e2(A.Q(a2).ax.a===B.C?B.e:B.k,24)
+g=t.u6
+m=A.xh(A.a([A.Dm(l,k,h)],g),!0,new A.bO(m,t.zS),f,new A.ata(),5)
+h=A.a2("position")
+k=A.d3(0,80)
+l=A.xh(A.a([A.Dm(h,k,i?f:j.x6(B.G,24,1.2))],g),!0,f,f,new A.atb(),5)
+k=A.a2("position_2")
+h=A.d3(0,80)
+k=A.xh(A.a([A.Dm(k,h,i?f:j.x6(B.G,24,1.2))],g),!0,f,f,new A.atc(),5)
+j=A.a2("about_dev")
+return A.eg(f,B.O,A.cK(B.a7,A.a([a0,A.bi(A.a([A.cK(B.a7,A.a([n,A.bv(f,A.dj(A.a([A.bi(A.a([new A.cH(new A.a9(0,d,0,1/0),m,f),new A.cH(new A.a9(0,d,0,1/0),l,f),new A.cH(new A.a9(0,d,0,1/0),k,f),new A.k6(f),new A.cH(new A.a9(0,d*0.5,0,1/0),A.ez(j,a1==null?f:a1.Ro(1.5),f),f),new A.k7(f),A.fc(B.aX,A.a([A.bi(A.a([A.ez(A.a2("location")+":",s,f),new A.h1(f),A.ez("Trujillo, Per\xfa",a1,f)],o),B.T,B.q,B.u),new A.v3(f),A.bi(A.a([A.ez(A.a2("whatsapp")+":",s,f),new A.h1(f),A.ez("+51977683001",a1,f)],o),B.T,B.q,B.u)],o),0,0),A.fc(B.aX,A.a([A.bi(A.a([A.ez(A.a2("email")+":",s,f),new A.h1(f),A.ez("zavaleta.marvin@gmail.com",a1,f)],o),B.T,B.q,B.u)],o),0,0),new A.eS(f),A.dj(A.a([A.ub(B.cD,A.a2("download_cv"),48,new A.atd(a2),!1,"",80),new A.k8(f),A.ub(B.cD,A.a2("hire_me_now"),48,f,!0,u.U,80)],o),B.y,B.q,B.u),new A.k7(f),A.fc(B.aX,A.aL5(a2,$.aAK()),0,0)],o),B.T,B.q,B.aU)],o),B.y,B.q,B.aU),B.o,f,f,f,f,f,f,new A.aI(0,p*0.3,0,0),B.eW,f,f,f)],o),B.F,B.a6),new A.eS(f),new A.cJ(new A.aI(16,0,16,0),A.bi(A.azO(a2,$.a4B(),!1,!1,!1,d),B.y,B.q,B.u),f)],o),B.T,B.q,B.u)],o),B.F,B.a6),f,f,f)}}
 A.ate.prototype={
 $0(){var s,r=this.a,q=r.d
 q===$&&A.b()

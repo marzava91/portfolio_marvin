@@ -77,13 +77,13 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     double dottedGoldenGlobeOffset = sizeOfBlobSm * 0.4;
     double heightOfBlobAndGlobe =
         computeHeight(dottedGoldenGlobeOffset, sizeOfGoldenGlobe, sizeOfBlobSm);
-    //double heightOfStack = heightOfBlobAndGlobe * 2;
+    double heightOfStack = heightOfBlobAndGlobe * 2;
     //double blobOffset = heightOfStack * 0.3;
     return ContentArea(
       child: Stack(
         children: [
           Container(
-            //height: heightOfStack,
+            height: heightOfStack,
             child: Stack(
               children: [
                 //Stack(
@@ -112,14 +112,12 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                  // ],
                 //),
                 Positioned(
-                  top: 320,
-                  //top: 100,
+                  top: 100,
                   right: -(sizeOfBlobSm),
                   child: HeaderImage(
                     controller: _controller,
                     globeSize: sizeOfGoldenGlobe,
-                    imageHeight: 400,
-                    //imageHeight: heightOfStack,
+                    imageHeight: heightOfStack,
                   ),
                 ),
               ],
@@ -131,8 +129,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
               Stack(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 60),
-                    //margin: EdgeInsets.only(top: heightOfStack * 0.1, left: 8.0),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.1, left: 8.0),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
                       style: textTheme.displayLarge?.copyWith(
@@ -144,8 +141,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                   Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: sidePadding),
-                    margin: EdgeInsets.only(top: 140),
-                    //margin: EdgeInsets.only(top: heightOfStack * 0.3),
+                    margin: EdgeInsets.only(top: heightOfStack * 0.3),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
