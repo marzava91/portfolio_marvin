@@ -45,7 +45,7 @@ class _HeaderImageState extends State<HeaderImage> {
       children: [
         Transform.translate(
           offset: isMobile
-              ? const Offset(0, 0) // 📱 Móviles: más abajo
+              ? const Offset(0, 30) // 📱 Móviles: más abajo
               : const Offset(-50, -50), // 🖥️ Desktop: más arriba
           child: Image.asset(
             ImagePath.DEV_HEADER,

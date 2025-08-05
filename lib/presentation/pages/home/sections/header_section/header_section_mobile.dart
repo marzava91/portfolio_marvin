@@ -286,14 +286,14 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   buttonTitle: 'download_cv'.tr(),
                                   onPressed: () {
                                     final locale = context.locale.languageCode;
-                                    final pdfPath = locale == 'es'
-                                        ? 'assets/docs/Marvin_Zavaleta_Fullstack_Developer_ES.pdf'
-                                        : 'assets/docs/Marvin_Zavaleta_Fullstack_Developer_EN.pdf';
 
-                                    html.AnchorElement anchorElement = html.AnchorElement(href: pdfPath)
+                                    final pdfUrl = locale == 'es'
+                                        ? 'https://drive.google.com/uc?export=download&id=1XaPB3WeuvM7eo_FWBhUhE009qivbJowe'
+                                        : 'https://drive.google.com/uc?export=download&id=1Ixu7PkSfS8hfZeYGFQ1X9Ei0kBowYm0G';
+
+                                    html.AnchorElement anchor = html.AnchorElement(href: pdfUrl)
                                       ..target = 'blank'
-                                      ..download = pdfPath.split('/').last;
-                                    anchorElement.click();
+                                      ..click();
                                   },
                                 ),
                                 SpaceW16(),
