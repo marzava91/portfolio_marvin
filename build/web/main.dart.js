@@ -96620,7 +96620,7 @@ return A.ao1(i,h,A.os().$3$color$fontSize$fontWeight(B.d5,12,B.r),q,p,o,n,m,l,g,
 r($,"b5C","aEK",()=>A.a([A.aBR(B.LG,"+51 977 683 001",A.a2("phone_me")+":"),A.aBR(B.M3,"zavaleta.marvin@gmail.com",A.a2("mail_me")+":"),A.aBR(B.oW,"https://github.com/marzava91",A.a2("follow_me_2")+":")],A.at("y<tp>")))
 s($,"b5m","aOA",()=>{var q=null,p=A.a([A.tw(new A.azE(),"/"),A.tw(new A.azF(),"/projects/miji-mobile-app"),A.tw(new A.azG(),"/projects/miji-admin-panel"),A.tw(new A.azH(),"/projects/miji-landing-page"),A.tw(new A.azI(),"/projects/miji-analytics"),A.tw(new A.azJ(),"/projects/tec-landing-page")],t.yo)
 return A.aRT(!1,new A.azK(),q,q,q,"/",q,q,q,!1,q,!0,q,!1,new A.WR(new A.akk(p,A.b0a(),5)))})
-r($,"b1b","aAK",()=>{var q="https://wa.me/51977683001?text=Hola%20me%20comunico%20desde%20tu%20link%20de%20portafolio",p="https://github.com/marzava91",o="https:linkedin.com/in/marvin-zavaleta-v",n="https://www.instagram.com/marvinzav/"
+r($,"b1b","aAK",()=>{var q="https://wa.me/51977683001?text=Hola%20me%20comunico%20desde%20tu%20link%20de%20portafolio",p="https://github.com/marzava91",o="https://linkedin.com/in/marvin-zavaleta",n="https://www.instagram.com/marvinzav/"
 return A.a([A.amO(B.M0,q,q),A.amO(B.oW,p,p),A.amO(B.M_,o,o),A.amO(B.LZ,n,n)],A.at("y<SR>"))})
 r($,"b1a","aEg",()=>A.a([A.Cn(90,"Flutter & Dart"),A.Cn(85,"Firebase & Google Cloud"),A.Cn(75,"PostgreSQL & SQL"),A.Cn(80,"Data Science (Python, Pandas, NumPy, Scikit-Learn)"),A.Cn(70,"Data Visualization (Matplotlib, Seaborn)"),A.Cn(70,"Business Insight & Decision Making")],A.at("y<SF>")))
 r($,"b19","aAJ",()=>{var q,p,o,n,m=A.a2("skills_1")
