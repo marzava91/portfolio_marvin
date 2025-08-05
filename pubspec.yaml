@@ -51,3 +51,5 @@ flutter:
     - assets/translations/
     - assets/images/icon_light.png
     - assets/images/icon_dark.png
+    - assets/docs/Marvin_Zavaleta_Fullstack_Developer_EN.pdf
+    - assets/docs/Marvin_Zavaleta_Fullstack_Developer_ES.pdf

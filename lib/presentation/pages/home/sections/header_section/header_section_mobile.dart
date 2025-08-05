@@ -8,6 +8,7 @@ import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'dart:html' as html;
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -283,7 +284,17 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   width: buttonWidth,
                                   height: buttonHeight,
                                   buttonTitle: 'download_cv'.tr(),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    final locale = context.locale.languageCode;
+                                    final pdfPath = locale == 'es'
+                                        ? 'assets/docs/Marvin_Zavaleta_Fullstack_Developer_ES.pdf'
+                                        : 'assets/docs/Marvin_Zavaleta_Fullstack_Developer_EN.pdf';
+
+                                    html.AnchorElement anchorElement = html.AnchorElement(href: pdfPath)
+                                      ..target = 'blank'
+                                      ..download = pdfPath.split('/').last;
+                                    anchorElement.click();
+                                  },
                                 ),
                                 SpaceW16(),
                                 NimbusButton(
