@@ -5,11 +5,11 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 
 class NimbusInfoSection1 extends StatelessWidget {
-  final String sectionTitle;
-  final String title1;
-  final String title2;
+  final String Function(BuildContext) sectionTitle;
+  final String Function(BuildContext) title1;
+  final String Function(BuildContext)? title2;
   final bool hasTitle2;
-  final String body;
+  final String Function(BuildContext) body;
   final TextStyle? sectionTitleStyle;
   final TextStyle? title1Style;
   final TextStyle? title2Style;
@@ -24,7 +24,7 @@ class NimbusInfoSection1 extends StatelessWidget {
     required this.sectionTitle,
     required this.title1,
     required this.body,
-    this.title2 = "",
+    this.title2,
     this.sectionTitleStyle,
     this.title1Style,
     this.hasTitle2 = true,
@@ -54,7 +54,7 @@ class NimbusInfoSection1 extends StatelessWidget {
                 RotatedBox(
                   quarterTurns: quarterTurns,
                   child: Text(
-                    sectionTitle,
+                    sectionTitle(context),
                     style: textTheme.bodyMedium?.copyWith(
                       fontSize: fontSize,
                       fontWeight: FontWeight.w400,
@@ -78,7 +78,7 @@ class NimbusInfoSection1 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title1,
+                    title1(context),
                     style: title1Style ?? titleStyle,
                   ),
                   hasTitle2
@@ -93,13 +93,13 @@ class NimbusInfoSection1 extends StatelessWidget {
                       : Empty(),
                   hasTitle2
                       ? Text(
-                          title2,
+                          title2!(context),
                           style: title2Style ?? titleStyle,
                         )
                       : Empty(),
                   SpaceH20(),
                   Text(
-                    body,
+                    body(context),
                     style: textTheme.bodyLarge
                         ?.copyWith(fontSize: fontSize, height: 1.8),
                   ),
@@ -116,11 +116,11 @@ class NimbusInfoSection1 extends StatelessWidget {
 }
 
 class NimbusInfoSection2 extends StatelessWidget {
-  final String sectionTitle;
-  final String title1;
-  final String title2;
+  final String Function(BuildContext) sectionTitle;
+  final String Function(BuildContext) title1;
+  final String Function(BuildContext)? title2;
   final bool hasTitle2;
-  final String body;
+  final String Function(BuildContext) body;
   final TextStyle? sectionTitleStyle;
   final TextStyle? title1Style;
   final TextStyle? title2Style;
@@ -134,7 +134,7 @@ class NimbusInfoSection2 extends StatelessWidget {
     required this.sectionTitle,
     required this.title1,
     required this.body,
-    this.title2 = "",
+    this.title2,
     this.sectionTitleStyle,
     this.title1Style,
     this.hasTitle2 = true,
@@ -168,7 +168,7 @@ class NimbusInfoSection2 extends StatelessWidget {
             ),
             SpaceW16(),
             Text(
-              sectionTitle,
+              sectionTitle(context),
               style: textTheme.bodyMedium?.copyWith(
                 fontSize: fontSize,
                 fontWeight: FontWeight.w400,
@@ -183,7 +183,7 @@ class NimbusInfoSection2 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title1,
+              title1(context),
               style: title1Style ?? titleStyle,
             ),
             hasTitle2
@@ -198,13 +198,13 @@ class NimbusInfoSection2 extends StatelessWidget {
                 : Empty(),
             hasTitle2
                 ? Text(
-                    title2,
+                    title2!(context),
                     style: title2Style ?? titleStyle,
                   )
                 : Empty(),
             SpaceH20(),
             Text(
-              body,
+              body(context),
               style: textTheme.bodyLarge
                   ?.copyWith(fontSize: fontSize, height: 1.8),
             ),

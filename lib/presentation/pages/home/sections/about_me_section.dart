@@ -312,10 +312,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
             children: [
               
               NimbusInfoSection1(
-                sectionTitle: 'about_me'.tr(),
-                title1: 'creative_design'.tr(),
-                title2: 'help'.tr(),
-                body: 'about_me_desc'.tr(),
+                sectionTitle: (context) => 'about_me'.tr(),
+                title1: (context) => 'creative_design'.tr(),
+                title2: (context) => 'help'.tr(),
+                body: (context) => 'about_me_desc'.tr(),
                 title1Style: titleStyle,
                 title2Style: titleStyle,
                 child: Column(
@@ -357,10 +357,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
     );
 
     return NimbusInfoSection2(
-      sectionTitle: 'about_me'.tr(),
-      title1: 'creative_design'.tr(),
-      title2: 'help'.tr(),
-      body: 'about_me_desc'.tr(),
+      sectionTitle: (context) => 'about_me'.tr(),
+      title1: (context) => 'creative_design'.tr(),
+      title2: (context) => 'help'.tr(),
+      body: (context) => 'about_me_desc'.tr(),
       title1Style: titleStyle,
       title2Style: titleStyle,
       //child: Column(

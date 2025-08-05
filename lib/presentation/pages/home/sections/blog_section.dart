@@ -58,10 +58,10 @@ class BlogSection extends StatelessWidget {
                       ContentArea(
                         width: contentAreaWidth,
                         child: NimbusInfoSection2(
-                          sectionTitle: StringConst.MY_BLOG,
-                          title1: StringConst.BLOG_SECTION_TITLE_1,
-                          title2: StringConst.BLOG_SECTION_TITLE_2,
-                          body: StringConst.BLOG_DESC,
+                          sectionTitle: (context) => StringConst.MY_BLOG,
+                          title1: (context) => StringConst.BLOG_SECTION_TITLE_1,
+                          title2: (context) => StringConst.BLOG_SECTION_TITLE_2,
+                          body: (context) => StringConst.BLOG_DESC,
                         ),
                       ),
                       SpaceH50(),
@@ -85,10 +85,10 @@ class BlogSection extends StatelessWidget {
                       ContentArea(
                         width: screenWidth * 0.7,
                         child: NimbusInfoSection1(
-                          sectionTitle: StringConst.MY_BLOG,
-                          title1: StringConst.BLOG_SECTION_TITLE_1,
-                          title2: StringConst.BLOG_SECTION_TITLE_2,
-                          body: StringConst.BLOG_DESC,
+                          sectionTitle: (context) => StringConst.MY_BLOG,
+                          title1: (context) => StringConst.BLOG_SECTION_TITLE_1,
+                          title2: (context) => StringConst.BLOG_SECTION_TITLE_2,
+                          body: (context) => StringConst.BLOG_DESC,
                         ),
                       ),
                       Spacer(),

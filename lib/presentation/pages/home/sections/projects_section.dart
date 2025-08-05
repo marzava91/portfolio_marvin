@@ -194,11 +194,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection2(
-      sectionTitle: 'my_works'.tr(), 
-      title1: 'meet_my_projects'.tr(),
+      sectionTitle: (context) => 'my_works'.tr(), 
+      title1: (context) => 'meet_my_projects'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: 'projects_desc'.tr(),
+      body: (context) => 'projects_desc'.tr(),
 //      child: ,
     );
   }
@@ -212,11 +212,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection1(
-      sectionTitle: 'my_works'.tr(), 
-      title1: 'meet_my_projects'.tr(),
+      sectionTitle: (context) => 'my_works'.tr(), 
+      title1: (context) => 'meet_my_projects'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: 'projects_desc'.tr(),
+      body: (context) => 'projects_desc'.tr(),
       child: Wrap(
         spacing: kSpacing,
         runSpacing: kRunSpacing,

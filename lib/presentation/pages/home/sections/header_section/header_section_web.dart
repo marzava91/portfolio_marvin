@@ -263,17 +263,17 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${'email'.tr()}:",
+                                      "${'location'.tr()}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.DEV_EMAIL}",
+                                      "${StringConst.LOCATION}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
                                 ),
-                                SpaceW16(),
+                                SpaceW24(),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -284,6 +284,21 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                     SpaceH8(),
                                     SelectableText(
                                       "${StringConst.WHATSAPP_NUMBER}",
+                                      style: bodyTextStyle,
+                                    ),
+                                  ],
+                                ),
+                                SpaceW24(),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SelectableText(
+                                      "${'email'.tr()}:",
+                                      style: socialTitleStyle,
+                                    ),
+                                    SpaceH8(),
+                                    SelectableText(
+                                      "${StringConst.DEV_EMAIL}",
                                       style: bodyTextStyle,
                                     ),
                                   ],

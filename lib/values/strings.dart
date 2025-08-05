@@ -32,6 +32,7 @@ class StringConst {
   //static const String DEV_EMAIL_2 = "zavaleta.marvin@gmail.com";
   //static const String WHATSAPP = "WhatsApp";
   static const String WHATSAPP_NUMBER = "+51977683001";
+  static const String LOCATION = "Trujillo, Perú";
   //static const String HIRE_ME_NOW = "Contrátame";
   //static const String UI_UX = "App Developer";
   //static const String UI_UX_DESC = "Construyo apps desde cero para Android, iOS y web";

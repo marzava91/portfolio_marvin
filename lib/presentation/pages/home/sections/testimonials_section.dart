@@ -23,10 +23,10 @@ class TestimonialsSection extends StatelessWidget {
             children: [
               Card(
                 child: NimbusInfoSection1(
-                  sectionTitle: StringConst.MY_TESTIMONIALS,
-                  title1: StringConst.TESTIMONIALS_SECTION_TITLE,
+                  sectionTitle: (context) => StringConst.MY_TESTIMONIALS,
+                  title1: (context) => StringConst.TESTIMONIALS_SECTION_TITLE,
                   hasTitle2: false,
-                  body: StringConst.TESTIMONIALS_1,
+                  body: (context) => StringConst.TESTIMONIALS_1,
                 ),
               )
             ],

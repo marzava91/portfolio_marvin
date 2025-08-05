@@ -111,6 +111,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                  // ],
                 //),
                 Positioned(
+                  top: 20,
                   right: -(sizeOfBlobSm),
                   child: HeaderImage(
                     controller: _controller,
@@ -228,17 +229,17 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${'email'.tr()}:",
+                                      "${'location'.tr()}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.DEV_EMAIL}",
+                                      "${StringConst.LOCATION}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
                                 ),
-                                SpaceW16(),
+                                SpaceW24(),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -249,6 +250,21 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                     SpaceH8(),
                                     SelectableText(
                                       "${StringConst.WHATSAPP_NUMBER}",
+                                      style: bodyTextStyle,
+                                    ),
+                                  ],
+                                ),
+                                SpaceW24(),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SelectableText(
+                                      "${'email'.tr()}:",
+                                      style: socialTitleStyle,
+                                    ),
+                                    SpaceH8(),
+                                    SelectableText(
+                                      "${StringConst.DEV_EMAIL}",
                                       style: bodyTextStyle,
                                     ),
                                   ],

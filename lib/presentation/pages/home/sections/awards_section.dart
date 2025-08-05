@@ -153,11 +153,11 @@ class _AwardsSectionState extends State<AwardsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection2(
-      sectionTitle: 'my_awards'.tr(),
-      title1: 'awards_title'.tr(),
+      sectionTitle: (context) => 'my_awards'.tr(),
+      title1: (context) => 'awards_title'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: 'awards_desc'.tr(),
+      body: (context) => 'awards_desc'.tr(),
       child: Column(
         children: [
           _buildAwards1(),
@@ -178,11 +178,11 @@ class _AwardsSectionState extends State<AwardsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection1(
-      sectionTitle: 'my_awards'.tr(),
-      title1: 'awards_title'.tr(),
+      sectionTitle: (context) => 'my_awards'.tr(),
+      title1: (context) => 'awards_title'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: 'awards_desc'.tr(),
+      body: (context) => 'awards_desc'.tr(),
       child: Container(
         child: Row(
           children: [

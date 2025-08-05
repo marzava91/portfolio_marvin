@@ -247,10 +247,10 @@ class _SkillsSectionState extends State<SkillsSection>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NimbusInfoSection1(
-                  sectionTitle: 'my_skills'.tr(),
-                  title1: 'skills_title_1'.tr(), 
-                  title2: 'skills_title_2'.tr(),
-                  body: 'skills_desc'.tr(),
+                  sectionTitle: (context) => 'my_skills'.tr(),
+                  title1: (context) => 'skills_title_1'.tr(), 
+                  title2: (context) => 'skills_title_2'.tr(),
+                  body: (context) => 'skills_desc'.tr(),
                   title1Style: titleStyle,
                   title2Style: titleStyle,
                   child: Wrap(
@@ -278,10 +278,10 @@ class _SkillsSectionState extends State<SkillsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection2(
-      sectionTitle: 'my_skills'.tr(),
-      title1: 'skills_title_1'.tr(), 
-      title2: 'skills_title_2'.tr(),
-      body: 'skills_desc'.tr(),
+      sectionTitle: (context) => 'my_skills'.tr(),
+      title1: (context) => 'skills_title_1'.tr(), 
+      title2: (context) => 'skills_title_2'.tr(),
+      body: (context) => 'skills_desc'.tr(),
       title1Style: titleStyle,
       title2Style: titleStyle,
       child: Wrap(

@@ -16,6 +16,7 @@
   "download_cv": "Download CV",
   "email": "Email",
   "whatsapp": "WhatsApp",
+  "location": "Location",
   "hire_me_now": "Hire Me",
   "app_dev": "App Developer",
   "app_dev_desc": "I build Android, iOS, and web apps from the ground up.",
@@ -109,11 +110,11 @@
   "miji_admin_stack_title": "Technologies used",
   "miji_admin_stack_items": "Flutter Web, Dart, Firebase Auth, Cloud Firestore, Firebase Storage, Firebase Messaging, Firebase App Check, GetX, GetStorage, Lottie, Shimmer, PDF & Printing, Excel, File Picker, CSV, DataTable2, FlChart, Flutter Dropzone, TypeAhead, Multi Select Flutter, Iconsax, Vercel Hosting",
 
-"miji_mobile_title": "Miji Markets Mobile App",
-"miji_mobile_intro": "This mobile application, developed using Flutter, is available on Android and iOS. It provides an intuitive and fast shopping experience, allowing users to browse products, place orders, schedule deliveries, manage payment methods, receive notifications, access discounts, and more.",
-"miji_mobile_stack_title": "Technologies used",
-"miji_mobile_stack_items": "Flutter, Dart, Firebase Core, Firebase Auth, Firestore, Firebase Storage, Firebase Crashlytics, Firebase App Check, Google Sign In, Geolocator, Google Maps, App Tracking Transparency, GetX, GetStorage, Hive, Shared Preferences, Lottie, Shimmer, Carousel Slider, Flutter Rating Bar, Readmore, Path Provider, Smooth Page Indicator, Permission Handler, Iconsax, FontAwesome, URL Launcher, Flutter Native Splash, CSV, Excel, Mailer",
-"miji_mobile_download_link": "Download the app",
-"miji_mobile_download_note": "Available only in Peru (Android & iOS)"
+  "miji_mobile_title": "Miji Markets Mobile App",
+  "miji_mobile_intro": "This mobile application, developed using Flutter, is available on Android and iOS. It provides an intuitive and fast shopping experience, allowing users to browse products, place orders, schedule deliveries, manage payment methods, receive notifications, access discounts, and more.",
+  "miji_mobile_stack_title": "Technologies used",
+  "miji_mobile_stack_items": "Flutter, Dart, Firebase Core, Firebase Auth, Firestore, Firebase Storage, Firebase Crashlytics, Firebase App Check, Google Sign In, Geolocator, Google Maps, App Tracking Transparency, GetX, GetStorage, Hive, Shared Preferences, Lottie, Shimmer, Carousel Slider, Flutter Rating Bar, Readmore, Path Provider, Smooth Page Indicator, Permission Handler, Iconsax, FontAwesome, URL Launcher, Flutter Native Splash, CSV, Excel, Mailer",
+  "miji_mobile_download_link": "Download the app",
+  "miji_mobile_download_note": "Available only in Peru (Android & iOS)"
 
 }
