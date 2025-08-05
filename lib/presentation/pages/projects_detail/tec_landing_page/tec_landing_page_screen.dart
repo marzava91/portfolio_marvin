@@ -9,6 +9,7 @@ class TecLandingPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
 
     return ProjectBaseScreen(
       content: Padding(
@@ -20,7 +21,7 @@ class TecLandingPageScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
-                  Icons.web_rounded, // Puedes cambiar a Icons.build, Icons.info, etc.
+                  Icons.web_rounded, // Puedes cambiar a otro si lo deseas
                   size: 80,
                   color: AppColors.primaryColor,
                 ),
@@ -28,7 +29,7 @@ class TecLandingPageScreen extends StatelessWidget {
                 Text(
                   'under_construction'.tr(),
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.primaryText2,
+                    color: isDark ? AppColors.primaryText1 : AppColors.primaryText2,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -37,6 +38,7 @@ class TecLandingPageScreen extends StatelessWidget {
                   'tec_landing_title'.tr(),
                   style: theme.textTheme.headlineLarge?.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -44,15 +46,16 @@ class TecLandingPageScreen extends StatelessWidget {
                 Text(
                   'tec_landing_intro'.tr(),
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.secondaryColor,
+                    color: isDark ? AppColors.grey350 : AppColors.secondaryColor,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 24),                
+                const SizedBox(height: 24),
                 Text(
                   'tec_landing_stack_title'.tr(),
                   style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -63,9 +66,9 @@ class TecLandingPageScreen extends StatelessWidget {
                   children: 'tec_landing_stack_items'.tr().split(',').map((tech) {
                     return Chip(
                       label: Text(tech.trim()),
-                      backgroundColor: AppColors.primaryColor.withOpacity(0.1),
+                      backgroundColor: AppColors.primaryColor.withOpacity(0.2),
                       labelStyle: TextStyle(
-                        color: AppColors.primaryColor,
+                        color: isDark ? AppColors.grey350 : AppColors.primaryColor,
                         fontWeight: FontWeight.w600,
                       ),
                     );

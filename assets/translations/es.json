@@ -114,5 +114,5 @@
   "miji_mobile_stack_title": "Tecnologías utilizadas",
   "miji_mobile_stack_items": "Flutter, Dart, Firebase Core, Firebase Auth, Firestore, Firebase Storage, Firebase Crashlytics, Firebase App Check, Google Sign In, Geolocator, Google Maps, App Tracking Transparency, GetX, GetStorage, Hive, Shared Preferences, Lottie, Shimmer, Carousel Slider, Flutter Rating Bar, Readmore, Path Provider, Smooth Page Indicator, Permission Handler, Iconsax, FontAwesome, URL Launcher, Flutter Native Splash, CSV, Excel, Mailer",
   "miji_mobile_download_link": "Descargar la app",
-  "miji_mobile_download_note": "Disponible solo en Perú (Android e iOS)"
+  "miji_mobile_download_note": "Disponible sólo en Perú (Android e iOS)"
 }

@@ -10,6 +10,7 @@ class MijiMobileAppScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
 
     return ProjectBaseScreen(
       content: Padding(
@@ -29,7 +30,7 @@ class MijiMobileAppScreen extends StatelessWidget {
                 Text(
                   'under_construction'.tr(),
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.primaryText2,
+                    color: isDark ? AppColors.primaryText1 : AppColors.primaryText2,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -38,6 +39,7 @@ class MijiMobileAppScreen extends StatelessWidget {
                   'miji_mobile_title'.tr(),
                   style: theme.textTheme.headlineLarge?.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -45,7 +47,7 @@ class MijiMobileAppScreen extends StatelessWidget {
                 Text(
                   'miji_mobile_intro'.tr(),
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.secondaryColor,
+                    color: isDark ? AppColors.grey350 : AppColors.secondaryColor,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -54,6 +56,7 @@ class MijiMobileAppScreen extends StatelessWidget {
                   'miji_mobile_stack_title'.tr(),
                   style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -64,33 +67,36 @@ class MijiMobileAppScreen extends StatelessWidget {
                   children: 'miji_mobile_stack_items'.tr().split(',').map((tech) {
                     return Chip(
                       label: Text(tech.trim()),
-                      backgroundColor: AppColors.primaryColor.withOpacity(0.1),
+                      backgroundColor: AppColors.primaryColor.withOpacity(0.2),
                       labelStyle: TextStyle(
-                        color: AppColors.primaryColor,
+                        color: isDark ? AppColors.grey350 : AppColors.primaryColor,
                         fontWeight: FontWeight.w600,
                       ),
                     );
                   }).toList(),
                 ),
                 const SizedBox(height: 40),
-                TextButton.icon(
-                  onPressed: () {
-                    launchUrl(Uri.parse('https://www.mijimarkets.com/#/descargar'));
+                ElevatedButton.icon(
+                  onPressed: () async {
+                    final uri = Uri.parse('https://www.mijimarkets.com/#/descargar');
+                    if (await canLaunchUrl(uri)) {
+                      await launchUrl(uri, mode: LaunchMode.externalApplication);
+                    }
                   },
                   icon: const Icon(Icons.open_in_new),
-                  label: Text(
-                    'miji_mobile_download_link'.tr(),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primaryColor,
-                    ),
+                  label: Text('visit_website'.tr()),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primaryColor,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
                   'miji_mobile_download_note'.tr(),
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: AppColors.secondaryColor,
+                    color: isDark ? AppColors.grey350 : AppColors.secondaryColor,
                   ),
                 ),
               ],

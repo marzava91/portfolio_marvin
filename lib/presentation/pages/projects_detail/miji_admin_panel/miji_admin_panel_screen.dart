@@ -10,6 +10,7 @@ class MijiAdminPanelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ProjectBaseScreen(
       content: Padding(
@@ -29,7 +30,7 @@ class MijiAdminPanelScreen extends StatelessWidget {
                 Text(
                   'under_construction'.tr(),
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.primaryText2,
+                    color: isDark ? AppColors.primaryText1 : AppColors.primaryText2,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -38,6 +39,7 @@ class MijiAdminPanelScreen extends StatelessWidget {
                   'miji_admin_title'.tr(),
                   style: theme.textTheme.headlineLarge?.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -45,7 +47,7 @@ class MijiAdminPanelScreen extends StatelessWidget {
                 Text(
                   'miji_admin_intro'.tr(),
                   style: theme.textTheme.bodyMedium?.copyWith(
-                    color: AppColors.secondaryColor,
+                    color: isDark ? AppColors.grey350 : AppColors.secondaryColor,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -54,6 +56,7 @@ class MijiAdminPanelScreen extends StatelessWidget {
                   'miji_admin_stack_title'.tr(),
                   style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -64,9 +67,9 @@ class MijiAdminPanelScreen extends StatelessWidget {
                   children: 'miji_admin_stack_items'.tr().split(',').map((tech) {
                     return Chip(
                       label: Text(tech.trim()),
-                      backgroundColor: AppColors.primaryColor.withOpacity(0.1),
+                      backgroundColor: AppColors.primaryColor.withOpacity(0.2),
                       labelStyle: TextStyle(
-                        color: AppColors.primaryColor,
+                        color: isDark ? AppColors.grey350 : AppColors.primaryColor,
                         fontWeight: FontWeight.w600,
                       ),
                     );
