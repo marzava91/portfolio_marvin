@@ -7,6 +7,7 @@ import 'package:nimbus/presentation/widgets/skill_card.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 
 class BrandSection extends StatelessWidget {
@@ -118,7 +119,7 @@ class BrandSection extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: NimbusButton(
-              buttonTitle: StringConst.HIRE_ME,
+              buttonTitle: 'hire_me'.tr(),
               buttonColor: AppColors.primaryColor,
               onPressed: () {},
             ),

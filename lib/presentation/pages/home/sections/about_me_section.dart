@@ -4,12 +4,13 @@ import 'package:nimbus/presentation/widgets/buttons/social_button_2.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
+//import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 const double kSpacingSm = 40.0;
 const double kRunSpacingSm = 24.0;
@@ -311,10 +312,10 @@ class _AboutMeSectionState extends State<AboutMeSection>
             children: [
               
               NimbusInfoSection1(
-                sectionTitle: StringConst.ABOUT_ME,
-                title1: StringConst.CREATIVE_DESIGN,
-                title2: StringConst.HELP,
-                body: StringConst.ABOUT_ME_DESC,
+                sectionTitle: 'about_me'.tr(),
+                title1: 'creative_design'.tr(),
+                title2: 'help'.tr(),
+                body: 'about_me_desc'.tr(),
                 title1Style: titleStyle,
                 title2Style: titleStyle,
                 child: Column(
@@ -356,27 +357,27 @@ class _AboutMeSectionState extends State<AboutMeSection>
     );
 
     return NimbusInfoSection2(
-      sectionTitle: StringConst.ABOUT_ME,
-      title1: StringConst.CREATIVE_DESIGN,
-      title2: StringConst.HELP,
-      body: StringConst.ABOUT_ME_DESC,
+      sectionTitle: 'about_me'.tr(),
+      title1: 'creative_design'.tr(),
+      title2: 'help'.tr(),
+      body: 'about_me_desc'.tr(),
       title1Style: titleStyle,
       title2Style: titleStyle,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringConst.FOLLOW_ME_1,
-            style: textTheme.headlineSmall?.copyWith(color: AppColors.black),
-          ),
-          SpaceH16(),
-          Wrap(
-            spacing: kSpacingSm,
-            runSpacing: kRunSpacingSm,
-            children: _buildSocialButtons(Data.socialData2),
-          ),
-        ],
-      ),
+      //child: Column(
+      //  crossAxisAlignment: CrossAxisAlignment.start,
+      //  children: [
+      //    Text(
+      //      StringConst.FOLLOW_ME_1,
+      //     style: textTheme.headlineSmall?.copyWith(color: AppColors.black),
+      //    ),
+      //    SpaceH16(),
+      //    Wrap(
+      //      spacing: kSpacingSm,
+      //      runSpacing: kRunSpacingSm,
+      //      children: _buildSocialButtons(Data.socialData2),
+       //   ),
+      //  ],
+      //),
     );
   }
 }

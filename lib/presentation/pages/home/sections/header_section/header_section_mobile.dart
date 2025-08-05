@@ -4,9 +4,10 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
+//import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -76,7 +77,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     double heightOfBlobAndGlobe =
         computeHeight(dottedGoldenGlobeOffset, sizeOfGoldenGlobe, sizeOfBlobSm);
     double heightOfStack = heightOfBlobAndGlobe * 2;
-    double blobOffset = heightOfStack * 0.3;
+    //double blobOffset = heightOfStack * 0.3;
     return ContentArea(
       child: Stack(
         children: [
@@ -84,8 +85,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
             height: heightOfStack,
             child: Stack(
               children: [
-                Stack(
-                  children: [
+                //Stack(
+                  //children: [
                     // Positioned(
                     //   left: -(sizeOfBlobSm * 0.7),
                     //   top: blobOffset,
@@ -95,20 +96,20 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                     //     width: sizeOfBlobSm,
                     //   ),
                     // ),
-                    Positioned(
-                      left: -(sizeOfGoldenGlobe / 3),
-                      top: blobOffset + dottedGoldenGlobeOffset,
-                      child: RotationTransition(
-                        turns: _controller,
-                        child: Image.asset(
-                          ImagePath.DOTS_GLOBE_YELLOW,
-                          width: sizeOfGoldenGlobe,
-                          height: sizeOfGoldenGlobe,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                    //Positioned(
+                    //  left: -(sizeOfGoldenGlobe / 3),
+                    //  top: blobOffset + dottedGoldenGlobeOffset,
+                    //  child: RotationTransition(
+                    //    turns: _controller,
+                    //    child: Image.asset(
+                    //      ImagePath.DOTS_GLOBE_YELLOW,
+                    //      width: sizeOfGoldenGlobe,
+                    //      height: sizeOfGoldenGlobe,
+                    //    ),
+                    //  ),
+                    //),
+                 // ],
+                //),
                 Positioned(
                   right: -(sizeOfBlobSm),
                   child: HeaderImage(
@@ -152,7 +153,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.INTRO,
+                                    'intro'.tr(),
                                     speed: Duration(milliseconds: 60),
                                     textStyle: textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
@@ -173,7 +174,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.POSITION,
+                                    'position'.tr(),
                                     speed: Duration(milliseconds: 80),
                                     textStyle: textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
@@ -193,7 +194,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.POSITION_2,
+                                    'position_2'.tr(),
                                     speed: Duration(milliseconds: 80),
                                     textStyle: textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
@@ -212,7 +213,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               constraints:
                                   BoxConstraints(maxWidth: screenWidth * 0.5),
                               child: SelectableText(
-                                StringConst.ABOUT_DEV,
+                                'about_dev'.tr(),
                                 style: bodyTextStyle?.copyWith(
                                   height: 1.5,
                                   // color: AppColors.black,
@@ -227,12 +228,12 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.EMAIL}:",
+                                      "${'email'.tr()}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
+                                      "${StringConst.DEV_EMAIL}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -242,7 +243,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.WHATSAPP}:",
+                                      "${'whatsapp'.tr()}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
@@ -260,14 +261,14 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                 NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
+                                  buttonTitle: 'download_cv'.tr(),
                                   onPressed: () {},
                                 ),
                                 SpaceW16(),
                                 NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
-                                  buttonTitle: StringConst.HIRE_ME_NOW,
+                                  buttonTitle: 'hire_me_now'.tr(),
                                   opensUrl: true,
                                   url: StringConst.EMAIL_URL,
                                 ),

@@ -13,20 +13,39 @@ class TextWithBullet extends StatelessWidget {
   final TextStyle? textStyle;
   final double? spacing;
 
-  @override
+   @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
+    final TextTheme textTheme = Theme.of(context).textTheme;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 600;
+
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Bullet(),
         spacing == null ? SpaceW16() : SizedBox(width: spacing),
-        Text(
-          text,
-          style: textStyle ??
-              textTheme.bodyLarge?.copyWith(
-                color: AppColors.primaryText2,
+        isMobile
+            ? Flexible(
+                child: Text(
+                  text,
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
+                  style: textStyle ??
+                      textTheme.bodyLarge?.copyWith(
+                        color: AppColors.primaryText2,
+                      ),
+                ),
+              )
+            : Text(
+                text,
+                softWrap: false,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                style: textStyle ??
+                    textTheme.bodyLarge?.copyWith(
+                      color: AppColors.primaryText2,
+                    ),
               ),
-        ),
       ],
     );
   }

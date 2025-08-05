@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
+//import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/nimbus_info_section.dart';
 import 'package:nimbus/presentation/widgets/project_item.dart';
@@ -8,6 +8,8 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:go_router/go_router.dart';
 
 const double kSpacing = 20.0;
 const double kRunSpacing = 16.0;
@@ -192,11 +194,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection2(
-      sectionTitle: StringConst.MY_WORKS,
-      title1: StringConst.MEET_MY_PROJECTS,
+      sectionTitle: 'my_works'.tr(), 
+      title1: 'meet_my_projects'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: StringConst.PROJECTS_DESC,
+      body: 'projects_desc'.tr(),
 //      child: ,
     );
   }
@@ -210,11 +212,11 @@ class _ProjectsSectionState extends State<ProjectsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection1(
-      sectionTitle: StringConst.MY_WORKS,
-      title1: StringConst.MEET_MY_PROJECTS,
+      sectionTitle: 'my_works'.tr(), 
+      title1: 'meet_my_projects'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: StringConst.PROJECTS_DESC,
+      body: 'projects_desc'.tr(),
       child: Wrap(
         spacing: kSpacing,
         runSpacing: kRunSpacing,
@@ -242,6 +244,8 @@ class _ProjectsSectionState extends State<ProjectsSection>
   List<Widget> _buildProjects(List<ProjectData> data, {bool isMobile = false}) {
     List<Widget> items = [];
     for (int index = 0; index < data.length; index++) {
+      final project = data[index];
+
       items.add(
         ScaleTransition(
           scale: _projectScaleAnimation,
@@ -258,6 +262,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
             title: data[index].title,
             subtitle: data[index].category,
             imageUrl: data[index].projectCoverUrl,
+            onTap: () => GoRouter.of(context).go(project.route),
           ),
         ),
       );

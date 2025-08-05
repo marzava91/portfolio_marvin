@@ -3,14 +3,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/about_me_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/awards_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/blog_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/footer_section.dart';
+import 'package:nimbus/presentation/pages/home/sections/footer_section/footer_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/header_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_web.dart';
 import 'package:nimbus/presentation/pages/home/sections/projects_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/skills_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/statistics_section.dart';
 import 'package:nimbus/presentation/widgets/app_drawer.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
@@ -19,6 +17,7 @@ import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:auto_route/auto_route.dart'; 
+import 'package:easy_localization/easy_localization.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -26,49 +25,108 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-    duration: const Duration(milliseconds: 300),
-    vsync: this,
-  );
-  late final Animation<double> _animation = CurvedAnimation(
-    parent: _controller,
-    curve: Curves.easeInOut,
-  );
-  // bool isFabVisible = false;
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  bool _isLoading = true;
+
+  late final AnimationController _controller;
+  late final Animation<double> _animation;
+
+  late final AnimationController _logoController;
+  late final Animation<double> _logoAnimation;
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
   final ScrollController _scrollController = ScrollController();
 
-  final List<NavItemData> navItems = [
-    NavItemData(name: StringConst.HOME, key: GlobalKey(), isSelected: true),
-    NavItemData(name: StringConst.ABOUT, key: GlobalKey()),
-    NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
-    NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
-    NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
-    //NavItemData(name: StringConst.BLOG, key: GlobalKey()),
-  ];
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    _scrollController.dispose();
-    super.dispose();
-  }
+  late final List<NavItemData> navItems;
 
   @override
   void initState() {
+    super.initState();
+
+    navItems = [
+      NavItemData(name: 'home'.tr(), key: GlobalKey(), isSelected: true),
+      NavItemData(name: 'about'.tr(), key: GlobalKey()),
+      NavItemData(name: 'skills'.tr(), key: GlobalKey()),
+      NavItemData(name: 'projects'.tr(), key: GlobalKey()),
+      NavItemData(name: 'awards'.tr(), key: GlobalKey()),
+    ];
+
+    _controller = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+
+    _animation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeInOut,
+    );
+
+    _logoController = AnimationController(
+      duration: const Duration(milliseconds: 1000),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _logoAnimation = Tween<double>(begin: 0.85, end: 1.15).animate(
+      CurvedAnimation(
+        parent: _logoController,
+        curve: Curves.easeInOutSine,
+      ),
+    );
+
     _scrollController.addListener(() {
       if (_scrollController.position.pixels < 100) {
         _controller.reverse();
       }
     });
-    super.initState();
+
+    _simulateInitialLoad();
+  }
+
+  Future<void> _simulateInitialLoad() async {
+    await Future.delayed(const Duration(milliseconds: 1600));
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    _logoController.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  String getLogoForTheme(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+    return brightness == Brightness.dark
+        ? 'assets/images/icon_dark.png'
+        : 'assets/images/icon_light.png';
   }
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoading) {
+      return Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        body: Center(
+          child: ScaleTransition(
+            scale: _logoAnimation,
+            child: Image.asset(
+              getLogoForTheme(context),
+              width: 120,
+              height: 120,
+            ),
+          ),
+        ),
+      );
+    }
+
+    return _buildMainContent(context);
+  }
+
+  Widget _buildMainContent(BuildContext context) {
     double screenHeight = heightOfScreen(context);
     double spacerHeight = screenHeight * 0.10;
 

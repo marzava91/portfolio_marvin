@@ -51,16 +51,43 @@ class SkillCard extends StatefulWidget {
 }
 
 class _SkillCardState extends State<SkillCard> {
+  bool _isHovering = false;
+
+  void _onEnter(PointerEvent event) {
+    setState(() => _isHovering = true);
+  }
+
+  void _onExit(PointerEvent event) {
+    setState(() => _isHovering = false);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: widget.width,
-      height: widget.height,
-      decoration: BoxDecoration(
-        borderRadius: widget.borderRadius,
+    final isDesktop = MediaQuery.of(context).size.width > 800;
+
+    final double size = isDesktop
+        ? (widget.width ?? 400) // cuadrado fijo para desktop
+        : widget.width ?? double.infinity;
+
+    final double height = isDesktop
+        ? size
+        : widget.height ?? 180;
+
+    return MouseRegion(
+      onEnter: _onEnter,
+      onExit: _onExit,
+      child: AnimatedSwitcher(
+        duration: Duration(milliseconds: 300),
+        child: Container(
+          key: ValueKey(_isHovering),
+          width: size,
+          height: height,
+          decoration: BoxDecoration(
+            borderRadius: widget.borderRadius,
+          ),
+          child: _isHovering ? onHoverChild() : defaultChild(),
+        ),
       ),
-      child: defaultChild(),
     );
   }
 
@@ -125,12 +152,20 @@ class _SkillCardState extends State<SkillCard> {
                         ),
                   ),
                   SpaceH8(),
-                  Text(
-                    widget.description,
-                    style: widget.descriptionStyle ??
-                        textTheme.bodyMedium?.copyWith(
-                          color: AppColors.primaryText1,
-                        ),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      maxWidth: 260, // Para evitar que se expanda de más
+                    ),
+                    child: Text(
+                      widget.description,
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: widget.descriptionStyle ??
+                          Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                color: AppColors.primaryText1,
+                              ),
+                    ),
                   ),
                 ],
               ),

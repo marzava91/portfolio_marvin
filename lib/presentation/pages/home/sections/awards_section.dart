@@ -7,6 +7,7 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 
 class AwardsSection extends StatefulWidget {
@@ -152,11 +153,11 @@ class _AwardsSectionState extends State<AwardsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection2(
-      sectionTitle: StringConst.MY_AWARDS,
-      title1: StringConst.AWARDS_TITLE,
+      sectionTitle: 'my_awards'.tr(),
+      title1: 'awards_title'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: StringConst.AWARDS_DESC,
+      body: 'awards_desc'.tr(),
       child: Column(
         children: [
           _buildAwards1(),
@@ -177,11 +178,11 @@ class _AwardsSectionState extends State<AwardsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection1(
-      sectionTitle: StringConst.MY_AWARDS,
-      title1: StringConst.AWARDS_TITLE,
+      sectionTitle: 'my_awards'.tr(),
+      title1: 'awards_title'.tr(),
       title1Style: titleStyle,
       hasTitle2: false,
-      body: StringConst.AWARDS_DESC,
+      body: 'awards_desc'.tr(),
       child: Container(
         child: Row(
           children: [
@@ -278,7 +279,7 @@ class _AwardsSectionState extends State<AwardsSection>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          StringConst.AWARDS_TYPE_TITLE_1,
+          'awards_type_title_1'.tr(),
           style: textTheme.headlineSmall?.copyWith(
             color: textColor,
           ),
@@ -298,7 +299,7 @@ class _AwardsSectionState extends State<AwardsSection>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          StringConst.AWARDS_TYPE_TITLE_2,
+          'awards_type_title_2'.tr(),
           style: textTheme.headlineSmall?.copyWith(
             color: textColor,
           ),

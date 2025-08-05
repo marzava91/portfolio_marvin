@@ -6,6 +6,7 @@ import 'package:nimbus/presentation/widgets/circular_container.dart';
 import 'package:nimbus/presentation/widgets/nimbus_card.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HeaderImage extends StatefulWidget {
   const HeaderImage({
@@ -36,10 +37,15 @@ class _HeaderImageState extends State<HeaderImage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobile = screenWidth < 600; // o el breakpoint que estés usando
+
     return Stack(
       children: [
         Transform.translate(
-          offset: const Offset(-50, -50), // -Y para subir
+          offset: isMobile
+              ? const Offset(0, 0) // 📱 Móviles: más abajo
+              : const Offset(-50, -50), // 🖥️ Desktop: más arriba
           child: Image.asset(
             ImagePath.DEV_HEADER,
             width: widget.imageWidth,
@@ -121,7 +127,7 @@ List<Widget> buildCardRow({
         title: Flexible(child: data[index].buildTitleWidget(context)),
         subtitle: Flexible(
           child: SelectableText(
-            data[index].subtitle,
+            data[index].subtitle.tr(),
             style: textTheme.bodyLarge?.copyWith(
                 fontSize: responsiveSize(
               context,

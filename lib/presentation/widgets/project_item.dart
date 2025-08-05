@@ -8,6 +8,7 @@ class ProjectData {
   final String projectCoverUrl;
   final String title;
   final String category;
+  final String route;
   final double width;
   final double height;
   final double mobileWidth;
@@ -16,6 +17,7 @@ class ProjectData {
   ProjectData({
     required this.projectCoverUrl,
     required this.title,
+    required this.route,
     required this.category,
     required this.width,
     this.mobileHeight = 0.5,
@@ -37,6 +39,7 @@ class ProjectItem extends StatefulWidget {
     this.subtitleStyle,
     this.textColor = AppColors.white,
     this.bannerColor,
+    this.onTap,
   }) : super(key: key);
 
   final String title;
@@ -49,6 +52,7 @@ class ProjectItem extends StatefulWidget {
   final double width;
   final double height;
   final double? bannerHeight;
+  final VoidCallback? onTap; 
 
   @override
   _ProjectItemState createState() => _ProjectItemState();
@@ -110,7 +114,8 @@ class _ProjectItemState extends State<ProjectItem>
     return MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
-      child: Container(
+      child: GestureDetector(
+        onTap: widget.onTap,
         child: Stack(
           children: [
             Image.asset(

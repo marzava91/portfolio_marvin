@@ -23,24 +23,24 @@ class Data {
       url: StringConst.INSTAGRAM_URL,
     ),
   ];
-  static List<SocialButton2Data> socialData2 = [
-    SocialButton2Data(
-      title: StringConst.DRIBBLE,
-      iconData: FontAwesomeIcons.dribbble,
-      url: StringConst.DRIBBLE_URL,
-      titleColor: AppColors.pink300,
-      buttonColor: AppColors.pink300,
-      iconColor: AppColors.white,
-    ),
-    SocialButton2Data(
-      title: StringConst.INSTA,
-      iconData: FontAwesomeIcons.instagram,
-      url: StringConst.INSTAGRAM_URL,
-      titleColor: AppColors.yellow300,
-      buttonColor: AppColors.yellow300,
-      iconColor: AppColors.white,
-    ),
-  ];
+  //static List<SocialButton2Data> socialData2 = [
+  //  SocialButton2Data(
+  //    title: StringConst.DRIBBLE,
+  //    iconData: FontAwesomeIcons.dribbble,
+  //    url: StringConst.DRIBBLE_URL,
+  //    titleColor: AppColors.pink300,
+  //    buttonColor: AppColors.pink300,
+  //    iconColor: AppColors.white,
+  //  ),
+  //  SocialButton2Data(
+  //    title: StringConst.INSTA,
+  //    iconData: FontAwesomeIcons.instagram,
+  //    url: StringConst.INSTAGRAM_URL,
+  //    titleColor: AppColors.yellow300,
+  //    buttonColor: AppColors.yellow300,
+  //    iconColor: AppColors.white,
+  //  ),
+  //];
 
   static List<SkillLevelData> skillLevelData = [
     SkillLevelData(
@@ -71,8 +71,8 @@ class Data {
 
   static List<SkillCardData> skillCardData = [
     SkillCardData(
-      title: StringConst.SKILLS_1,
-      description: StringConst.SKILLS_1_DESC,
+      title: 'skills_1'.tr(), 
+      description: 'skills_1_desc'.tr(), 
       iconData: FontAwesomeIcons.flutter,
     ),
     SkillCardData(
@@ -80,18 +80,18 @@ class Data {
         description: "",
         iconData: Icons.pages_outlined), //not being used
     SkillCardData(
-      title: StringConst.SKILLS_2,
-      description: StringConst.SKILLS_2_DESC,
+      title: 'skills_2'.tr(),
+      description: 'skills_2_desc'.tr(),
       iconData: FontAwesomeIcons.fire,
     ),
     SkillCardData(
-      title: StringConst.SKILLS_3,
-      description: StringConst.SKILLS_3_DESC,
+      title: 'skills_3'.tr(),
+      description: 'skills_3_desc'.tr(),
       iconData: FontAwesomeIcons.python,
     ),
     SkillCardData(
-      title: StringConst.SKILLS_4,
-      description: StringConst.SKILLS_4_DESC,
+      title: 'skills_4'.tr(),
+      description: 'skills_4_desc'.tr(),
       iconData: FontAwesomeIcons.database,
     ),
     SkillCardData(
@@ -107,19 +107,18 @@ class Data {
   ];
 
   static List<ProjectCategoryData> projectCategories = [
-    ProjectCategoryData(title: StringConst.ALL, number: 5, isSelected: true),
-    ProjectCategoryData(title: StringConst.WEB_DEVELOPMENT, number: 3),
-    ProjectCategoryData(title: StringConst.MOBILE_DEVELOPMENT, number: 1),
-    ProjectCategoryData(title: StringConst.PHOTOGRAPHER, number: 1),
-    ProjectCategoryData(title: StringConst.DATA_SCIENCE, number: 0),
+    ProjectCategoryData(title: 'all'.tr(), number: 5, isSelected: true),
+    ProjectCategoryData(title: 'web_development'.tr(), number: 3),
+    ProjectCategoryData(title: 'mobile_development'.tr(), number: 1),
+    ProjectCategoryData(title: 'data_analytics'.tr(), number: 1),
+    ProjectCategoryData(title: 'data_science'.tr(), number: 0),
   ];
 
   static List<String> awards1 = [
-    StringConst.AWARDS_1,
-    StringConst.AWARDS_2,
-    StringConst.AWARDS_3,
-    StringConst.AWARDS_4,
-    //StringConst.AWARDS_5,
+    'awards_1'.tr(),
+    'awards_2'.tr(),
+    'awards_3'.tr(),
+    'awards_4'.tr(),
   ];
   static List<String> awards2 = [
     StringConst.AWARDS_6,
@@ -154,21 +153,21 @@ class Data {
 
   static List<NimBusCardData> nimbusCardData = [
     NimBusCardData(
-      title: StringConst.UI_UX,
-      subtitle: StringConst.UI_UX_DESC,
+      title: 'app_dev',
+      subtitle: 'app_dev_desc',
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
     ),
     NimBusCardData(
-      title: StringConst.PHOTOGRAPHER,
-      subtitle: StringConst.PHOTOGRAPHER_DESC,
+      title: 'data_sci',
+      subtitle: 'data_sci_desc',
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
       circleBgColor: AppColors.primaryColor
     ),
     NimBusCardData(
-      title: StringConst.FREELANCER,
-      subtitle: StringConst.FREELANCER_DESC,
+      title: 'mvp_builder',
+      subtitle: 'mvp_builder_desc',
       leadingIcon: Icons.done,
       trailingIcon: Icons.chevron_right,
       leadingIconColor: AppColors.black,
@@ -178,34 +177,39 @@ class Data {
 
   static List<ProjectData> allProjects = [
     ProjectData(
-      title: StringConst.PORTFOLIO_1_TITLE,
-      category: StringConst.WEB_DEVELOPMENT,
+      title: 'portfolio_1_title'.tr(),
+      category: 'web_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_1,
+      route: '/projects/miji-admin-panel',
       width: 0.5,
       mobileHeight: 0.3,
     ),
     ProjectData(
-      title: StringConst.PORTFOLIO_2_TITLE,
-      category: StringConst.MOBILE_DEVELOPMENT,
+      title: 'portfolio_2_title'.tr(),
+      category: 'mobile_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_2,
+      route: '/projects/miji-mobile-app',
       width: 0.225,
     ),
     ProjectData(
-      title: StringConst.PORTFOLIO_3_TITLE,
-      category: StringConst.WEB_DEVELOPMENT,
+      title: 'portfolio_3_title'.tr(),
+      category: 'web_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_3,
+      route: '/projects/miji-landing-page',
       width: 0.225,
     ),
     ProjectData(
-      title: StringConst.PORTFOLIO_4_TITLE,
-      category: StringConst.DATA_ANALYTICS,
+      title: 'portfolio_4_title'.tr(),
+      category: 'data_analytics'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_4,
+      route: '/projects/miji-analytics',
       width: 0.2375,
     ),
     ProjectData(
-      title: StringConst.PORTFOLIO_5_TITLE,
-      category: StringConst.WEB_DEVELOPMENT,
+      title: 'portfolio_5_title'.tr(),
+      category: 'web_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_5,
+      route: '/projects/tec-landing-page',
       width: 0.2375,
     ),
   ];
@@ -213,37 +217,42 @@ class Data {
 
   static List<ProjectData> webDeveloper = [
     ProjectData(
-      title: StringConst.PORTFOLIO_1_TITLE,
-      category: StringConst.WEB_DEVELOPMENT,
+      title: 'portfolio_1_title'.tr(),
+      category: 'web_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_1,
+      route: '/projects/miji-admin-panel',
       width: 0.5,
     ),
     ProjectData(
-      title: StringConst.PORTFOLIO_3_TITLE,
-      category: StringConst.WEB_DEVELOPMENT,
+      title: 'portfolio_3_title'.tr(),
+      category: 'web_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_3,
+      route: '/projects/miji-landing-page',
       width: 0.225,
     ),
     ProjectData(
-      title: StringConst.PORTFOLIO_5_TITLE,
-      category: StringConst.WEB_DEVELOPMENT,
+      title: 'portfolio_5_title'.tr(),
+      category: 'web_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_5,
+      route: '/projects/tec-landing-page',      
       width: 0.225,
     )
   ];
   static List<ProjectData> appDeveloper= [
     ProjectData(
-      title: StringConst.PORTFOLIO_2_TITLE,
-      category: StringConst.MOBILE_DEVELOPMENT,
+      title: 'portfolio_2_title'.tr(),
+      category: 'mobile_development'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_2,
+      route: '/projects/miji-mobile-app',
       width: 0.2375,
     ),
   ];
   static List<ProjectData> dataAnalytics = [
     ProjectData(
-      title: StringConst.PORTFOLIO_4_TITLE,
-      category: StringConst.DATA_ANALYTICS,
+      title: 'portfolio_4_title'.tr(),
+      category: 'data_analytics'.tr(),
       projectCoverUrl: ImagePath.PORTFOLIO_4,
+      route: '/projects/miji-analytics',
       width: 0.2375,
     )
   ];

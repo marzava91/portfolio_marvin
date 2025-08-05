@@ -33,6 +33,8 @@ dependencies:
 
   # Utilidades
   url_launcher: ^6.2.5
+  easy_localization: ^3.0.3
+  go_router: ^13.1.0
 
 dev_dependencies:
   flutter_test:
@@ -46,3 +48,6 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/translations/
+    - assets/images/icon_light.png
+    - assets/images/icon_dark.png

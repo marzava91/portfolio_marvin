@@ -4,11 +4,12 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/widgets.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
+//import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
+//import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 const double bodyTextSizeLg = 16.0;
 const double bodyTextSizeSm = 14.0;
@@ -182,7 +183,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                               child: AnimatedTextKit(
                                 animatedTexts: [
                                   TypewriterAnimatedText(
-                                    StringConst.INTRO,
+                                    'intro'.tr(),
                                     speed: const Duration(milliseconds: 60),
                                     textStyle: textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
@@ -207,7 +208,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 child: AnimatedTextKit(
                                   animatedTexts: [
                                     TypewriterAnimatedText(
-                                      StringConst.POSITION,
+                                      'position'.tr(),
                                       speed: const Duration(milliseconds: 80),
                                       textStyle: textTheme.displayMedium?.copyWith(
                                         fontSize: headerIntroTextSize,
@@ -231,7 +232,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 child: AnimatedTextKit(
                                   animatedTexts: [
                                     TypewriterAnimatedText(
-                                      StringConst.POSITION_2,
+                                      'position_2'.tr(),
                                       speed: const Duration(milliseconds: 80),
                                       textStyle: textTheme.displayMedium?.copyWith(
                                         fontSize: headerIntroTextSize,
@@ -250,7 +251,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                               constraints:
                                   BoxConstraints(maxWidth: screenWidth * 0.35),
                               child: SelectableText(
-                                StringConst.ABOUT_DEV,
+                                'about_dev'.tr(),
                                 style: bodyTextStyle?.copyWith(height: 1.5),
                               ),
                             ),
@@ -262,12 +263,12 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.EMAIL}:",
+                                      "${'email'.tr()}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
                                     SelectableText(
-                                      "${StringConst.DEV_EMAIL_2}",
+                                      "${StringConst.DEV_EMAIL}",
                                       style: bodyTextStyle,
                                     ),
                                   ],
@@ -277,7 +278,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     SelectableText(
-                                      "${StringConst.WHATSAPP}:",
+                                      "${'whatsapp'.tr()}:",
                                       style: socialTitleStyle,
                                     ),
                                     SpaceH8(),
@@ -295,7 +296,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
-                                  buttonTitle: StringConst.DOWNLOAD_CV,
+                                  buttonTitle: 'download_cv'.tr(),
                                   buttonColor: AppColors.primaryColor,
                                   onPressed: () {},
                                 ),
@@ -303,7 +304,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                 NimbusButton(
                                   width: buttonWidth,
                                   height: buttonHeight,
-                                  buttonTitle: StringConst.HIRE_ME_NOW,
+                                  buttonTitle: 'hire_me_now'.tr(),
                                   opensUrl: true,
                                   url: StringConst.EMAIL_URL,
                                   // onPressed: () =>

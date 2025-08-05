@@ -5,26 +5,27 @@ import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/content_area.dart';
 import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
+//import 'package:nimbus/presentation/widgets/nimbus_link.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
-import 'package:nimbus/utils/functions.dart';
+//import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 List<FooterItem> footerItems = [
   FooterItem(
-    title: StringConst.PHONE_ME + ":",
+    title: 'phone_me'.tr() + ":",
     subtitle: StringConst.PHONE_NUMBER,
     iconData: FeatherIcons.phone,
   ),
   FooterItem(
-    title: StringConst.MAIL_ME + ":",
-    subtitle: StringConst.DEV_EMAIL_2,
+    title: 'mail_me'.tr() + ":",
+    subtitle: StringConst.DEV_EMAIL,
     iconData: FontAwesomeIcons.paperPlane,
   ),
   FooterItem(
-    title: StringConst.FOLLOW_ME_2 + ":",
+    title: 'follow_me_2'.tr() + ":",
     subtitle: StringConst.FOLLOW_ME_2_URL,
     iconData: FontAwesomeIcons.github,
   ),
@@ -39,11 +40,11 @@ class FooterSection extends StatefulWidget {
 class _FooterSectionState extends State<FooterSection> {
   @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? footerTextStyle = textTheme.bodySmall?.copyWith(
-      color: AppColors.primaryText2,
-      fontWeight: FontWeight.bold,
-    );
+    //TextTheme textTheme = Theme.of(context).textTheme;
+    //TextStyle? footerTextStyle = textTheme.bodySmall?.copyWith(
+    //  color: AppColors.primaryText2,
+    //  fontWeight: FontWeight.bold,
+    //);
     double screenWidth = widthOfScreen(context) - (getSidePadding(context) * 2);
     double screenHeight = heightOfScreen(context);
     double contentAreaWidth = screenWidth;
@@ -262,7 +263,7 @@ class _FooterSectionState extends State<FooterSection> {
                 children: [
                   SpaceH80(),
                   Text(
-                    StringConst.LETS_TALK,
+                    'lets_talk'.tr(),
                     textAlign: TextAlign.center,
                     style:
                         textTheme.headlineLarge?.copyWith(color: AppColors.white),
@@ -271,7 +272,7 @@ class _FooterSectionState extends State<FooterSection> {
                   ..._buildFooterItems(footerItems),
                   SpaceH60(),
                   NimbusButton(
-                    buttonTitle: StringConst.HIRE_ME,
+                    buttonTitle: 'hire_me'.tr(),
                     buttonColor: AppColors.primaryColor,
                     onPressed: () async {
                       final Uri emailUri = Uri.parse(StringConst.EMAIL_URL);
@@ -334,7 +335,7 @@ class _FooterSectionState extends State<FooterSection> {
               children: [
                 Spacer(flex: 2),
                 Text(
-                  StringConst.LETS_TALK,
+                  'lets_talk'.tr(),
                   style: textTheme.displaySmall?.copyWith(color: AppColors.white),
                 ),
                 Spacer(),
@@ -349,7 +350,7 @@ class _FooterSectionState extends State<FooterSection> {
                 Spacer(),
                 NimBusButtonLink(
                   url: StringConst.EMAIL_URL,
-                  buttonTitle: StringConst.HIRE_ME,
+                  buttonTitle: 'hire_me'.tr(),
                   buttonColor: AppColors.primaryColor,
                 ),
                 Spacer(flex: 2),

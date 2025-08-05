@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
+import 'package:easy_localization/easy_localization.dart';
+
 
 class NimBusCardData {
   IconData leadingIcon;
@@ -27,7 +29,7 @@ class NimBusCardData {
     final textColor = isDark ? Colors.white : Colors.black;
 
     return Text(
-      title,
+      title.tr(),
       style: Theme.of(context).textTheme.titleLarge?.copyWith(
             color: textColor,
           ),

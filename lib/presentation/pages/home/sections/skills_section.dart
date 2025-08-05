@@ -9,6 +9,7 @@ import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 const double kRunSpacing = 20.0;
 const double kMainAxisSpacing = 16.0;
@@ -246,10 +247,10 @@ class _SkillsSectionState extends State<SkillsSection>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NimbusInfoSection1(
-                  sectionTitle: StringConst.MY_SKILLS,
-                  title1: StringConst.SKILLS_TITLE_1,
-                  title2: StringConst.SKILLS_TITLE_2,
-                  body: StringConst.SKILLS_DESC,
+                  sectionTitle: 'my_skills'.tr(),
+                  title1: 'skills_title_1'.tr(), 
+                  title2: 'skills_title_2'.tr(),
+                  body: 'skills_desc'.tr(),
                   title1Style: titleStyle,
                   title2Style: titleStyle,
                   child: Wrap(
@@ -277,10 +278,10 @@ class _SkillsSectionState extends State<SkillsSection>
       fontSize: responsiveSize(context, 26, 36, md: 32),
     );
     return NimbusInfoSection2(
-      sectionTitle: StringConst.MY_SKILLS,
-      title1: StringConst.SKILLS_TITLE_1,
-      title2: StringConst.SKILLS_TITLE_2,
-      body: StringConst.SKILLS_DESC,
+      sectionTitle: 'my_skills'.tr(),
+      title1: 'skills_title_1'.tr(), 
+      title2: 'skills_title_2'.tr(),
+      body: 'skills_desc'.tr(),
       title1Style: titleStyle,
       title2Style: titleStyle,
       child: Wrap(

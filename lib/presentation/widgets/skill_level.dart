@@ -84,10 +84,14 @@ class _SkillLevelState extends State<SkillLevel> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                widget.skill,
-                style: widget.skillStyle ?? effectiveTextStyle,
-              ),
+              Expanded(
+                  child: Text(
+                    widget.skill,
+                    style: widget.skillStyle ?? effectiveTextStyle,
+                    softWrap: true,
+                    overflow: TextOverflow.visible,
+                  ),
+                ),
               Text(
                 "${level.toInt()} %",
                 style: widget.levelStyle ?? effectiveTextStyle,

@@ -4,13 +4,12 @@ import 'package:nimbus/presentation/widgets/buttons/nimbus_button.dart';
 import 'package:nimbus/presentation/widgets/buttons/social_button.dart';
 import 'package:nimbus/presentation/widgets/empty.dart';
 import 'package:nimbus/presentation/widgets/nav_item.dart';
-import 'package:nimbus/presentation/widgets/buttons/nimbus_button_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_link.dart';
-import 'package:nimbus/presentation/widgets/nimbus_vertical_divider.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/utils/functions.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:go_router/go_router.dart';
 
 const double logoSpaceLeftLg = 40.0;
 const double logoSpaceLeftSm = 20.0;
@@ -77,17 +76,35 @@ class _NavSectionWebState extends State<NavSectionWeb> {
           children: [
             SizedBox(width: logoSpaceLeft),
             InkWell(
-              onTap: () {},
+              onTap: () => GoRouter.of(context).go('/'),
               child: Image.asset(
                 ImagePath.LOGO_DARK,
                 height: Sizes.HEIGHT_52,
               ),
             ),
             SizedBox(width: logoSpaceRight),
-            NimbusVerticalDivider(),
+            //NimbusVerticalDivider(),
             Spacer(flex: 1),
             ..._buildNavItems(widget.navItems),
             Spacer(flex: menuSpacerRight),
+            IconButton(
+              icon: Text(
+                context.locale.languageCode == 'es' ? '🇪🇸' : '🇬🇧',
+                style: const TextStyle(fontSize: 20),
+              ),
+              tooltip: context.locale.languageCode == 'es'
+                  ? 'Cambiar idioma'
+                  : 'Change Language',
+              onPressed: () {
+                final current = context.locale;
+                if (current.languageCode == 'es') {
+                  context.setLocale(const Locale('en'));
+                } else {
+                  context.setLocale(const Locale('es'));
+                }
+              },
+            ),
+            SpaceW20(),
             ResponsiveBuilder(
               refinedBreakpoints: RefinedBreakpoints(),
               builder: (context, sizingInformation) {
@@ -104,10 +121,10 @@ class _NavSectionWebState extends State<NavSectionWeb> {
                 }
               },
             ),
-            NimbusVerticalDivider(),
+            //NimbusVerticalDivider(),
             SizedBox(width: contactBtnSpaceLeft),
              NimbusButton(
-              buttonTitle: StringConst.CONTACT_ME,
+              buttonTitle: 'contact_me'.tr(),
               width: contactBtnWidth,
               // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
               opensUrl: true,
