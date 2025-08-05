@@ -7,6 +7,7 @@ import 'package:nimbus/presentation/widgets/nimbus_card.dart';
 import 'package:nimbus/presentation/widgets/spaces.dart';
 import 'package:nimbus/values/values.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HeaderImage extends StatefulWidget {
   const HeaderImage({
@@ -63,10 +64,18 @@ List<Widget> buildSocialIcons(BuildContext context, List<SocialButtonData> socia
   final iconColor = isDark ? Colors.white : Colors.black;
 
   List<Widget> items = [];
+
   for (int index = 0; index < socialItems.length; index++) {
     items.add(
-      NimBusLink(
-        url: socialItems[index].url,
+      GestureDetector(
+        onTap: () async {
+          final Uri uri = Uri.parse(socialItems[index].url);
+          if (await canLaunchUrl(uri)) {
+            await launchUrl(uri, mode: LaunchMode.externalApplication);
+          } else {
+            debugPrint('Could not launch ${socialItems[index].url}');
+          }
+        },
         child: Icon(
           socialItems[index].iconData,
           color: iconColor,
@@ -76,6 +85,7 @@ List<Widget> buildSocialIcons(BuildContext context, List<SocialButtonData> socia
     );
     items.add(SpaceW20());
   }
+
   return items;
 }
 

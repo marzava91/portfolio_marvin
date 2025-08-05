@@ -181,6 +181,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                             ConstrainedBox(
                               constraints: BoxConstraints(maxWidth: screenWidth),
                               child: AnimatedTextKit(
+                                key: ValueKey(EasyLocalization.of(context)?.locale),
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     'intro'.tr(),

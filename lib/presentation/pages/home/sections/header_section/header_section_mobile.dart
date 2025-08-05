@@ -111,7 +111,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                  // ],
                 //),
                 Positioned(
-                  top: 20,
+                  top: 100,
                   right: -(sizeOfBlobSm),
                   child: HeaderImage(
                     controller: _controller,
@@ -152,6 +152,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                               constraints:
                                   BoxConstraints(maxWidth: screenWidth),
                               child: AnimatedTextKit(
+                                key: ValueKey(EasyLocalization.of(context)?.locale),
                                 animatedTexts: [
                                   TypewriterAnimatedText(
                                     'intro'.tr(),
@@ -254,7 +255,11 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                     ),
                                   ],
                                 ),
-                                SpaceW24(),
+                              ],
+                            ),
+                            Wrap(
+                              // mainAxisSize: MainAxisSize.min,
+                              children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
